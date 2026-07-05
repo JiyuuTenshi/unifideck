@@ -5,8 +5,8 @@ on:
     types: [opened]
   issue_comment:
     types: [created]
-  schedule:
-    - cron: "*/10 * * * *" # Run every 10 minutes
+  #schedule:
+  #  - cron: "*/10 * * * *" # Run every 10 minutes
   workflow_dispatch:
     inputs:
       sync_mode:
