@@ -44,15 +44,15 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Translate en-US.json via DeepL (if changed)
+      #- name: Translate en-US.json via DeepL (if changed)
         # Only calls DeepL for keys whose MD5 has changed since
         # the last run. If en-US.json is unchanged → zero API
         # calls, zero quota consumed. If running on a fork PR
         # without DEEPL_API_KEY and en-US.json HAS changed →
         # exits 1 with a clear message for the maintainer.
-        env:
-          DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
-        run: python3 scripts/translate_at_build.py
+        #env:
+          #DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
+        #run: python3 scripts/translate_at_build.py
 
       - name: Regenerate locales.generated.ts from config.json
         # Reads defaults/config.json i18n section and emits
